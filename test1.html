@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRY ONE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+
+    function showActualHour() {
+        data = new Date()
+        hour = data.getHours()
+        minute = data.getMinutes()
+        seconds = data.getSeconds()
+        hour = zero(hour).toString()
+        minute = zero(minute).toString()
+        seconds = zero(seconds).toString()
+        document.getElementById("SHOW_THE_ACTUAL_HOUR").innerHTML = final(hour) + num[":"] + final(minute) + num[":"] + final(seconds)
+        t = setTimeout(function() { showActualHour() }, 1000)
+    }
+
+    function zero(i) {
+        if (i < 10) {
+            i = "0" + i
+        }
+        return i
+    }
+
+    function final(i) {
+        fin = ""
+        for (x in i) {
+            if (i[x] in num) {
+                fin += num[i[x]]
+            }
+        }
+        return fin
+    }
+
+
+
+    const num = {"0":`
+ _______ 
+(  __   )
+| (  )  |
+| | /   |
+| (/ /) |
+|   / | |
+|  (__) |
+(_______)
+         
+`,"1":`
+  __   
+ /  \\  
+ \\/) ) 
+   | | 
+   | | 
+   | | 
+ __) (_
+ \\____/
+       
+`,"2":`
+ _______ 
+/ ___   )
+\\/   )  |
+    /   )
+  _/   / 
+ /   _/  
+(   (__/\\
+\\_______/
+         
+`,"3":`
+ ______  
+/ ___  \\ 
+\\/   \\  \\
+   ___) /
+  (___ ( 
+      ) \\
+/\\___/  /
+\\______/ 
+         
+`,"4":`
+    ___   
+   /   )  
+  / /) |  
+ / (_) (_ 
+(____   _)
+     ) (  
+     | |  
+     (_)  
+          
+`,"5":`
+ _______ 
+(  ____ \\
+| (    \\/
+| (____  
+(_____ \\ 
+      ) )
+/\\____) )
+\\______/ 
+         
+`,"6":`
+  ______ 
+ / ____ \\
+( (    \\/
+| (____  
+|  ___ \\ 
+| (   ) )
+( (___) )
+ \\_____/ 
+         
+`,"7":`
+ ______  
+/ ___  \\ 
+\\/   )  )
+    /  / 
+   /  /  
+  /  /   
+ /  /    
+ \\_/     
+         
+`,"8":`
+  _____  
+ / ___ \\ 
+( (___) )
+ \\     / 
+ / ___ \\ 
+( (   ) )
+( (___) )
+ \\_____/ 
+         
+`,"9":`
+  _____  
+ / ___ \\ 
+( (   ) )
+( (___) |
+ \\____  |
+      ) |
+/\\____) )
+\\______/ 
+         
+`,":":`
+   
+   
+ _ 
+(_)
+   
+ _ 
+(_)
+   
+   
+`}
+    
+for (var i in num) {
+    num[i] = `<pre>${num[i].replace(/\n/g, '<br>')}</pre>`
+}
+
+    
+
+</script>
+<body onload="showActualHour()">
+    <h1 id="SHOW_THE_ACTUAL_HOUR"></h1>
+</body>
+</html>
